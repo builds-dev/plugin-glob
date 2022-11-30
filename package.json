@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {},
   "exports": {
-    "rollup": "./src/rollup.js"
+    "./rollup": "./src/rollup.js"
   },
   "keywords": [
     "rollup",

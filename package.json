@@ -1,0 +1,28 @@
+{
+  "name": "@builds-dev/plugin-import-glob",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.js",
+  "type": "module",
+  "scripts": {
+  },
+  "exports": {
+    "rollup": "./src/rollup.js"
+  },
+  "keywords": [
+    "rollup",
+    "plugin",
+    "import",
+    "glob",
+    "module"
+  ],
+  "author": "Johnny Hauser <johnnyhauser@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/builds-dev/plugin-import-glob"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "fast-glob": "^3.2.12"
+  }
+}

@@ -8,7 +8,7 @@ import {
 const name = pkg.name
 const meta = Symbol()
 
-export const glob = () => {
+export const import_glob = () => {
 	return {
 		name,
 		resolveId (source, importer, options) {

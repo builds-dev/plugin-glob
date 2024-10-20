@@ -1,4 +1,5 @@
-import { basename, dirname } from 'node:path'
+import { basename, dirname, join as join_path } from 'node:path'
+import { createHash } from 'node:crypto'
 import pkg from '../package.json' assert { type: 'json' }
 import {
 	create_module_for_glob,
@@ -16,10 +17,10 @@ export const import_glob = () => {
 				?
 					{
 						/*
-							All that matters here is that the id is unique and has the same directory as the importer.
+							Importers in different locations might use the same relative path,
+							so the id returned here must disambiguate them.
 						*/
-						// id: `${dirname(importer)}/${ulid()}.js`
-						id: `${dirname(importer)}/${virtual_module_id_prefix}${basename(importer)}`,
+						id: `${join_path(dirname(importer), createHash('sha256').update(source).digest('hex'))}.js`,
 						meta: { [meta]: { source, importer, options } }
 					}
 				:
